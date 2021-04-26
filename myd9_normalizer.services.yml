@@ -1,0 +1,15 @@
+services:
+  myd9_normalizer.normalizer.typed_data:
+    class: Drupal\myd9_normalizer\Normalizer\CustomTypedDataNormalizer
+    tags:
+      - { name: normalizer, priority: 2 }
+  myd9_normalizer.normalizer.node_entity:
+    class: Drupal\myd9_normalizer\Normalizer\NodeEntityNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 8 }
+  myd9_normalizer.normalizer.article_node_entity:
+    class: Drupal\myd9_normalizer\Normalizer\ArticleNodeEntityNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 8 }

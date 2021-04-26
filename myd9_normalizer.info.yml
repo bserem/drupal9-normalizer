@@ -1,0 +1,5 @@
+name: My Normalizer
+type: module
+description: Provides additional functionality for the site.
+package: REST
+core_version_requirement: ^9
